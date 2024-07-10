@@ -1,9 +1,9 @@
 # projectIOS
 
 
-readme
-i liek
-to be read
-luxembourgish
-puppelchen
-mean
+readme\n
+i liek\n
+to be read\n
+luxembourgish\n
+puppelchen\n
+mean\n
