@@ -157,6 +157,24 @@ public class Stateio : MonoBehaviour
                     }
                 }
             }
+        
+        }
+        else
+        {
+            Ray raymond = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(raymond, out hit))
+            {
+                if (hit.collider.tag != "Player")
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Besëtzer.heescht(hit.collider.gameObject.GetComponent<Luxem>());
+                        Besëtzer = null;
+                    }
+                    
+                }
+            }
         }
     }
 }
