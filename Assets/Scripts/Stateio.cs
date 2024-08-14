@@ -165,7 +165,7 @@ public class Stateio : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(raymond, out hit))
             {
-                if (hit.collider.tag != "Player")
+                if (hit.collider.tag != "Player" && Besëtzer.heeschtZaldoten > 1)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -173,6 +173,22 @@ public class Stateio : MonoBehaviour
                         Besëtzer = null;
                     }
                     
+                }
+                else if (hit.collider.gameObject.GetComponent<Luxem>() != Besëtzer && Besëtzer.heeschtZaldoten > 1)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        hit.collider.gameObject.GetComponent<Luxem>().heeschtZaldoten += Besëtzer.heeschtZaldoten;
+                        Besëtzer.heeschtZaldoten = 0;
+                        Besëtzer = null;
+                    }
+                }
+                else
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Besëtzer = null;
+                    }
                 }
             }
         }
